@@ -1,0 +1,4 @@
+nbproject
+vendor/**
+*.cnf
+public_html/**
