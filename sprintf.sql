@@ -3,7 +3,7 @@ targetitemid
     FROM
         wikidatawiki_p.wb_items_per_site source -- item pointing to the redirecting wikipage
         INNER JOIN %1$s_p.page sourcepage -- {$wiki}
-            ON REPLACE( source.ips_site_page, "" , "_" ) = sourcepage.page_title -- identifying the redirecting wikipage locally
+            ON REPLACE( source.ips_site_page, " " , "_" ) = sourcepage.page_title -- identifying the redirecting wikipage locally
             -- I know REPLACE() breaks indexes, but sadly I don't know of a workaround for the space/underscore mismatch
         INNER JOIN %1$s_p.redirect redirect -- {$wiki}
             ON sourcepage.page_id = redirect.rd_from -- identifying the redirect target locally
