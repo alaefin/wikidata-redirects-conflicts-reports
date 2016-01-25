@@ -1,4 +1,4 @@
-SELECT source.ips_item_id AS sourceitemid, source.ips_site_page AS sourcelink, CONCAT( redirect.rd_title, COALESCE( redirect.rd_fragment, "" ) ) AS redirecttarget, target.ips_site_page AS targelink, target.ips_item_id AS
+SELECT source.ips_item_id AS sourceitemid, source.ips_site_page AS sourcelink, COALESCE( CONCAT( redirect.rd_title, "#", redirect.rd_fragment ), redirect.rd_title ) AS redirecttarget, target.ips_site_page AS targelink, target.ips_item_id AS
 targetitemid
     FROM
         wikidatawiki_p.wb_items_per_site source -- item pointing to the redirecting wikipage
