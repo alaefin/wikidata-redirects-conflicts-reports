@@ -1,0 +1,2 @@
+# Runs every friday at 03:00 UTC (last morning of the week)
+0 3 * * 5  /usr/bin/jsub -N cron-tools.wikidata-redirects-conflicts-reports-1 -once -quiet /data/project/wikidata-redirects-conflicts-reports/wikidata-redirects-conflicts-reports.sh
